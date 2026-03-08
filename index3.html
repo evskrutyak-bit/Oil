@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магия Масел — Растительные масла первого холодного отжима</title>
+    <!-- Подключение премиальной пары шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Базовые настройки и переменные */
+        :root {
+            --primary-dark: #1A3C34; /* Тёмно-зелёный */
+            --primary-light: #2c5c51;
+            --accent-gold: #C5A880; /* Мягкое золото */
+            --accent-gold-hover: #b0936b;
+            --bg-cream: #FAF8F5; /* Кремовый/молочный фон */
+            --bg-white: #FFFFFF;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #E5E0D8;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-cream);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 120px 0;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--primary-dark);
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            line-height: 1.2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-dark);
+            color: var(--bg-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-dark);
+            border: 1px solid var(--primary-dark);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-dark);
+            color: var(--bg-white);
+            transform: translateY(-2px);
+        }
+
+        /* Навигация */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Первый экран (Hero) */
+        .hero {
+            padding-top: 160px;
+            padding-bottom: 80px;
+            background-color: var(--bg-cream);
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(rgba(250, 248, 245, 0.9), rgba(250, 248, 245, 0.9)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.15;
+            margin-bottom: 32px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        .hero-bullets {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .hero-bullets li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .hero-bullets li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--border-color), var(--bg-cream));
+            aspect-ratio: 4/5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Плейсхолдер для фото */
+        .img-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #EAE6DF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            opacity: 0.5;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Блок доверия */
+        .trust {
+            background-color: var(--bg-white);
+            padding: 60px 0;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .trust-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .trust-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* О бренде */
+        .about {
+            background-color: var(--bg-cream);
+            background-image: linear-gradient(rgba(250, 248, 245, 0.95), rgba(250, 248, 245, 0.95)), url('https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+
+        /* Ассортимент */
+        .assortment {
+            background-color: var(--bg-white);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--bg-cream);
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26, 60, 52, 0.08);
+            border-color: var(--accent-gold);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--bg-white);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .product-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .product-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        /* Сценарии (Как выбрать) */
+        .scenarios {
+            background-color: var(--primary-dark);
+            color: var(--bg-white);
+        }
+
+        .scenarios h2 {
+            color: var(--bg-white);
+        }
+
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .scenario-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .scenario-card:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Хиты */
+        .bestsellers {
+            background-color: var(--bg-cream);
+        }
+
+        /* Преимущества */
+        .benefits {
+            background-color: var(--bg-white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .benefit-item {
+            padding: 40px;
+            background: var(--bg-cream);
+            border-radius: 12px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .benefit-item h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .benefit-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Отзывы клиентов */
+        .testimonials {
+            background-color: var(--bg-cream);
+            padding: 100px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-card cite {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* Как мы работаем */
+        .workflow {
+            background-color: var(--bg-cream);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+        }
+
+        .step-item {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-dark);
+            color: var(--bg-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        /* FAQ */
+        .faq {
+            background-color: var(--bg-white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            margin-bottom: 15px;
+            background-color: var(--bg-cream);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        summary {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary-dark);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        details p {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+        }
+
+        /* Контакты */
+        .contacts {
+            background-color: var(--bg-cream);
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            background: var(--bg-white);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-info span {
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: var(--bg-cream);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        /* Финальный CTA */
+        .cta-final {
+            background-color: var(--primary-dark);
+            color: var(--bg-white);
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .cta-final h2 {
+            color: var(--bg-white);
+            margin-bottom: 20px;
+        }
+
+        .cta-final p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Подвал */
+        footer {
+            background-color: #112621;
+            color: rgba(255,255,255,0.7);
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .products-grid { grid-template-columns: repeat(3, 1fr); }
+            .scenarios-grid { grid-template-columns: repeat(3, 1fr); }
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            h2 { font-size: 2rem; }
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-bullets { text-align: left; display: inline-block; }
+            .hero-buttons { flex-direction: column; }
+            .nav-links { display: none; /* В реальном проекте здесь нужен бургер */ }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .scenarios-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid { grid-template-columns: 1fr; gap: 40px; }
+            .contacts-grid { grid-template-columns: 1fr; padding: 30px; }
+            .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 { font-size: 2rem; }
+            .trust-grid, .products-grid, .scenarios-grid, .benefits-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Магия <span>Масел</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">О бренде</a></li>
+                <li><a href="#assortment">Ассортимент</a></li>
+                <li><a href="#benefits">Преимущества</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 1. Первый экран -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Растительные масла первого холодного отжима</h1>
+                <p class="hero-subtitle">Производство и розлив на ваших глазах. Стеклянная тара разного объёма. Цены от производителя.</p>
+                <ul class="hero-bullets">
+                    <li>100% натуральный состав без добавок</li>
+                    <li>Бережный отжим при низких температурах</li>
+                    <li>Сохранение природного вкуса и аромата</li>
+                </ul>
+                <div class="hero-buttons">
+                    <a href="#assortment" class="btn btn-primary">Смотреть ассортимент</a>
+                    <a href="#scenarios" class="btn btn-outline">Подобрать масло</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Стеклянные бутылки с натуральными маслами на деревянном столе" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Блок доверия -->
+    <section class="trust">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <h4>Первый холодный отжим</h4>
+                <p>Сохраняем максимум пользы, вкуса и аромата</p>
+            </div>
+            <div class="trust-item">
+                <h4>Прозрачное производство</h4>
+                <p>Отжим и розлив происходят на ваших глазах</p>
+            </div>
+            <div class="trust-item">
+                <h4>Стеклянная тара</h4>
+                <p>Безопасное хранение без окисления продукта</p>
+            </div>
+            <div class="trust-item">
+                <h4>Цены от производителя</h4>
+                <p>Прямые поставки без наценок посредников</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Блок «О бренде» -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>О бренде «Магия Масел»</h2>
+            <div class="about-text">
+                <p>Мы создаем натуральные растительные масла для тех, кто ценит качество, вкус и осознанный подход к питанию. Наша цель — сделать продукт понятным и доступным, сохранив при этом высочайшие стандарты бережного производства.</p>
+                <br>
+                <p>Каждая капля нашего масла — это результат тщательного отбора сырья и бережного холодного отжима. Мы не используем химию, рафинацию или нагрев. Вы получаете чистый, живой продукт, который дополняет вкус любимых блюд и естественно вписывается в ваш ежедневный рацион.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Блок ассортимента -->
+    <section id="assortment" class="assortment">
+        <div class="container">
+            <h2>Наш ассортимент</h2>
+            <div class="products-grid">
+                <!-- Карточка 1 -->
+                <div class="product-card">
+                    <div class="product-icon"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Золотой лен" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div>
+                    <h3>Масло золотого льна</h3>
+                    <p>Мягкий вкус, идеальное дополнение к салатам.</p>
+                    <a href="#contacts" class="btn btn-outline" style="width: 100%; padding: 10px;">Подробнее</a>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="product-card">
+                    <div class="product-icon"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Чёрный тмин" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div>
+                    <h3>Масло чёрного тмина</h3>
+                    <p>Терпкий аромат для поддержки жизненного тонуса.</p>
+                    <a href="#contacts" class="btn btn-outline" style="width: 100%; padding: 10px;">Подробнее</a>
+                </div>
+                <!-- Карточка 3 -->
+                <div class="product-card">
+                    <div class="product-icon"><img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Конопля" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div>
+                    <h3>Конопляное масло</h3>
+                    <p>Ореховый привкус и идеальный баланс Омега-3/6.</p>
+                    <a href="#contacts" class="btn btn-outline" style="width: 100%; padding: 10px;">Подробнее</a>
+                </div>
+                <!-- Карточка 4 -->
+                <div class="product-card">
+                    <div class="product-icon"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Подсолнух" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div>
+                    <h3>Подсолнечное масло</h3>
+                    <p>Классический насыщенный вкус семечек.</p>
+                    <a href="#contacts" class="btn btn-outline" style="width: 100%; padding: 10px;">Подробнее</a>
+                </div>
+                <!-- Карточка 5 -->
+                <div class="product-card">
+                    <div class="product-icon"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Амарант" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div>
+                    <h3>Амарантовое масло</h3>
+                    <p>Редкое масло для деликатного ухода и питания.</p>
+                    <a href="#contacts" class="btn btn-outline" style="width: 100%; padding: 10px;">Подробнее</a>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="product-card">
+                    <div class="product-icon"><img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Миндаль" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div>
+                    <h3>Миндальное масло</h3>
+                    <p>Нежная текстура для кулинарии и заботы о коже.</p>
+                    <a href="#contacts" class="btn btn-outline" style="width: 100%; padding: 10px;">Подробнее</a>
+                </div>
+                <!-- Карточка 7 -->
+                <div class="product-card">
+                    <div class="product-icon"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Расторопша" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div>
+                    <h3>Масло расторопши</h3>
+                    <p>Легкое масло для мягкой поддержки организма.</p>
+                    <a href="#contacts" class="btn btn-outline" style="width: 100%; padding: 10px;">Подробнее</a>
+                </div>
+                <!-- Карточка 8 -->
+                <div class="product-card">
+                    <div class="product-icon"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Тыква" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div>
+                    <h3>Тыквенное масло</h3>
+                    <p>Густое, темное масло с выраженным вкусом.</p>
+                    <a href="#contacts" class="btn btn-outline" style="width: 100%; padding: 10px;">Подробнее</a>
+                </div>
+                <!-- Карточка 9 -->
+                <div class="product-card">
+                    <div class="product-icon"><img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Кедр" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div>
+                    <h3>Кедровое масло</h3>
+                    <p>Премиальный продукт с тонким таежным ароматом.</p>
+                    <a href="#contacts" class="btn btn-outline" style="width: 100%; padding: 10px;">Подробнее</a>
+                </div>
+                <!-- Карточка 10 -->
+                <div class="product-card">
+                    <div class="product-icon"><img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&q=80" alt="Лён" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div>
+                    <h3>Льняное масло</h3>
+                    <p>Классика холодного отжима для ежедневного меню.</p>
+                    <a href="#contacts" class="btn btn-outline" style="width: 100%; padding: 10px;">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Блок «Как выбрать масло» -->
+    <section id="scenarios" class="scenarios">
+        <div class="container">
+            <h2>Какое масло подойдет именно вам?</h2>
+            <div class="scenarios-grid">
+                <div class="scenario-card">
+                    <h4>Для ежедневного рациона</h4>
+                    <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Подсолнечное, Золотой лен, Льняное</p>
+                </div>
+                <div class="scenario-card">
+                    <h4>Для заботы о коже</h4>
+                    <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Миндальное, Амарантовое</p>
+                </div>
+                <div class="scenario-card">
+                    <h4>Поддержка пищеварения</h4>
+                    <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Тыквенное, Расторопши</p>
+                </div>
+                <div class="scenario-card">
+                    <h4>Восстановление и энергия</h4>
+                    <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Чёрного тмина, Кедровое</p>
+                </div>
+                <div class="scenario-card">
+                    <h4>Сбалансированное питание</h4>
+                    <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">Конопляное, Золотой лен</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Блок хитов -->
+    <section class="bestsellers">
+        <div class="container">
+            <h2>Идеальны для первого знакомства</h2>
+            <div class="products-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="product-card">
+                    <h3>Льняное масло</h3>
+                    <p>Базовое масло для любых холодных блюд.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Масло чёрного тмина</h3>
+                    <p>Уникальный терпкий вкус для ценителей.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Тыквенное масло</h3>
+                    <p>Идеальная заправка для крем-супов и салатов.</p>
+                </div>
+                <div class="product-card">
+                    <h3>Кедровое масло</h3>
+                    <p>Нежный вкус хвои и ореха, премиальный выбор.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Блок преимуществ -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2>Почему выбирают «Магию Масел»</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4>Бережный холодный отжим</h4>
+                    <p>Без нагревания и контакта с металлом, разрушающим структуру масла.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Натуральный вкус и аромат</h4>
+                    <p>Масло пахнет именно тем растением, из которого создано.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Стеклянная упаковка</h4>
+                    <p>Разные объемы в экологичном темном стекле для защиты от света.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Широкий выбор</h4>
+                    <p>От привычного подсолнечного до редкого амарантового.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Прямой производитель</h4>
+                    <p>Гарантия честной цены и свежести каждой произведенной партии.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Понятный выбор</h4>
+                    <p>Помогаем подобрать масло под ваши вкусы и задачи.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Новая секция: Счастливые клиенты -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Что говорят наши клиенты</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Счастливая клиентка" class="testimonial-img">
+                    <p>"Масла от 'Магии Масел' — это чистая магия! Натуральный вкус, польза для здоровья. Рекомендую всем!"</p>
+                    <cite>Анна, 32 года</cite>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Счастливый клиент" class="testimonial-img">
+                    <p>"Холодный отжим чувствуется сразу. Стеклянная тара — отличная идея. Буду заказывать ещё!"</p>
+                    <cite>Михаил, 45 лет</cite>
+                </div>
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Счастливая семья" class="testimonial-img">
+                    <p>"Вся семья в восторге от льняного масла. Добавляем в салаты — вкусно и полезно!"</p>
+                    <cite>Елена и семья</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Как мы работаем -->
+    <section class="workflow">
+        <div class="container">
+            <h2>Как получить свое масло</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Выбираете масло</h4>
+                    <p>Изучаете ассортимент или выбираете по задаче.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Консультация</h4>
+                    <p>Мы помогаем определиться с выбором и объемом.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Подготовка</h4>
+                    <p>Бережно разливаем свежее масло в стеклянную тару.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h4>Получение</h4>
+                    <p>Вы получаете 100% натуральный продукт.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Частые вопросы</h2>
+            <div class="faq-container">
+                <details>
+                    <summary>Чем масла первого холодного отжима отличаются от обычных?</summary>
+                    <p>Обычные масла из супермаркета часто проходят рафинацию и термическую обработку, теряя вкус и природные элементы. Холодный отжим производится прессом без нагревания, сохраняя естественный вкус, аромат и всю природную пользу семян и орехов.</p>
+                </details>
+                <details>
+                    <summary>Почему стеклянная тара лучше?</summary>
+                    <p>Стекло абсолютно инертно. Оно не вступает в реакцию с маслом, не выделяет микропластик и защищает продукт от окисления. Темное стекло дополнительно сохраняет масло от разрушительного воздействия солнечных лучей.</p>
+                </details>
+                <details>
+                    <summary>Как выбрать масло под себя?</summary>
+                    <p>Вы можете ориентироваться на вкусовые предпочтения (например, ореховые ноты кедрового или насыщенность тыквенного) или на ваши цели (добавление в салаты, уход за собой). Если сомневаетесь — оставьте заявку, мы с радостью подскажем.</p>
+                </details>
+                <details>
+                    <summary>Какие объёмы доступны?</summary>
+                    <p>Мы предлагаем масла в разных объемах стеклянных бутылочек: от небольших форматов для дегустации до стандартных бутылок для регулярного семейного использования.</p>
+                </details>
+                <details>
+                    <summary>Как оформить заказ?</summary>
+                    <p>Просто свяжитесь с нами по телефону, в удобном мессенджере или оставьте заявку через форму на сайте. Мы согласуем наличие, объем и способ получения.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Контакты -->
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2>Свяжитесь с нами</h2>
+            <div class="contacts-grid">
+                <div class="contact-info">
+                    <p><span>Телефон:</span> <a href="tel:+79990000000">+7 (999) 000-00-00</a></p>
+                    <p><span>Мессенджеры:</span> WhatsApp / Telegram</p>
+                    <p><span>Часы работы:</span> Ежедневно с 10:00 до 20:00</p>
+                    <p><span>Адрес производства / магазина:</span> [ Укажите ваш физический адрес ]</p>
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Номер телефона" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="3" placeholder="Какое масло вас интересует? (необязательно)"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Финальный CTA -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Подберите масло под свою задачу</h2>
+            <p>Оставьте заявку, и мы бесплатно проконсультируем вас по ассортименту и поможем сделать лучший выбор.</p>
+            <a href="#contacts" class="btn" style="background-color: var(--accent-gold); color: var(--primary-dark); font-weight: 600;">Получить консультацию</a>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container footer-content">
+            <div>&copy; 2024 «Магия Масел». Все права защищены.</div>
+            <div>ИП Бродский Кирилл Львович<br><span style="font-size: 0.8rem; opacity: 0.6;">ОГРНИП:[Укажите ОГРНИП] | ИНН: [Укажите ИНН]</span></div>
+            <div>Сделано с заботой о природе</div>
+        </div>
+    </footer>
+
+</body>
+</html>
